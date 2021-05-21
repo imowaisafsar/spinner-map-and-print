@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #line {
+            stroke-width: 3px;
+            stroke: black;
+        }
+
+        .point {
+            width: 15px;
+            height: 15px;
+            background: #d54501;
+            position: absolute;
+            z-index: 10;
+        }
+
+        body {
+            font-family: "Niramit", sans-serif;
+            background-color: #b2ada3;
+        }
+
+        p {
+            margin-left: 20px;
+            margin-right: 20px;
+            position: relative;
+            z-index: 11;
+            background: rgba(178, 173, 163, 0.55);
+        }
+
+        #one {
+            top: 80px;
+            right: 50px;
+        }
+
+        #two {
+            top: 290px;
+            right: 50px;
+        }
+
+        #three {
+            top: 390px;
+            right: 150px;
+        }
+
+        #four {
+            top: 590px;
+            left: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #4e7c80;
+            color: white;
+            padding: 10px 15px;
+            margin-left: 5px;
+            cursor: pointer;
+            position: relative;
+            z-index: 11;
+            line-height: 1em;
+        }
+
+        .btn:hover {
+            background: #3b5d60;
+        }
+
+        .form-check {
+            padding: 15px 25px;
+            cursor: pointer;
+            position: relative;
+            z-index: 11;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- each object needs a unique ID although this could be removed for the className check -->
+    <p>Select random numbers and click CONNECT button.</p>
+
+    <div id="design">
+        <table border="1" id="table">
+            <tr>
+                <td>
+                    <div id="ck1" class="form-check">1</div>
+                </td>
+                <td>
+                    <div id="ck2" class="form-check">2</div>
+                </td>
+                <td>
+                    <div id="ck3" class="form-check">3</div>
+                </td>
+                <td>
+                    <div id="ck4" class="form-check">4</div>
+                </td>
+                <td>
+                    <div id="ck5" class="form-check">5</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="ck6" class="form-check">1</div>
+                </td>
+                <td>
+                    <div id="ck7" class="form-check">2</div>
+                </td>
+                <td>
+                    <div id="ck8" class="form-check">3</div>
+                </td>
+                <td>
+                    <div id="ck9" class="form-check">4</div>
+                </td>
+                <td>
+                    <div id="ck10" class="form-check">5</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="ck11" class="form-check">1</div>
+                </td>
+                <td>
+                    <div id="ck12" class="form-check">2</div>
+                </td>
+                <td>
+                    <div id="ck13" class="form-check">3</div>
+                </td>
+                <td>
+                    <div id="ck14" class="form-check">4</div>
+                </td>
+                <td>
+                    <div id="ck15" class="form-check">5</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="ck16" class="form-check">1</div>
+                </td>
+                <td>
+                    <div id="ck17" class="form-check">2</div>
+                </td>
+                <td>
+                    <div id="ck18" class="form-check">3</div>
+                </td>
+                <td>
+                    <div id="ck19" class="form-check">4</div>
+                </td>
+                <td>
+                    <div id="ck20" class="form-check">5</div>
+                </td>
+            </tr>
+        </table>
+        <svg id="svg">
+            <line id="line" class="line original" stroke-array="5, 5" />
+        </svg>
+    </div>
+
+    <div id="ck6" class="text-center">
+        <button type="button" id="connect" class="btn btn-secondary">CONNECT</button>
+        <button type="button" id="printPDF" class="btn">
+            Print Form
+        </button>
+    </div>
+    <div id="output"></div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        const config = {
+            target: undefined,
+            line: $(".line"),
+            delay: 40 // enter zero for live resizing
+        }
+        const drawBetweenObjects = {
+
+            //cmake the line
+            makeLine: function (line, startPoint, endPoint) {
+                //debugger
+                var className = startPoint.attr('id') + endPoint.attr('id');
+                if (className.includes("undefined") !== true) { //error check
+                    $(line).clone().addClass('deleteMe').addClass(className).removeClass("original").insertAfter(line);
+                    //calculations (for legibility, these are separte vars)
+                    var x1 = startPoint.offset().left + (startPoint.width() / 2);
+                    var y1 = startPoint.offset().top + (startPoint.height() / 2);
+                    var x2 = endPoint.offset().left + (endPoint.width() / 2);
+                    var y2 = endPoint.offset().top + (endPoint.height() / 2);
+                    $("." + className).attr('x1', x1).attr('y1', y1).attr('x2', x2).attr('y2', y2); //svg attributes
+                } else { console.error("undefined object") }
+            },
+            findLines: function (search) {
+                $(".deleteMe").remove(); //remove last set of lines
+                let count = 1, first, last;
+                $(search).each(function (index, el) {
+                    if (search.eq(index + 1).length) { //only do drawBetweenObject if there is another.
+                        (count === 1 ? first = $(this) : ''), count++;
+                        last = search.eq(index + 1);
+                        drawBetweenObjects.makeLine(config.line, $(this), search.eq(index + 1));   //args order - line, div1 and div2 - the next div.
+                    }
+                });
+                drawBetweenObjects.makeLine(config.line, first, last);
+            }
+        }
+
+        $(".form-check").click(function () {
+            if (!$(this).hasClass('point')) {
+                $(this).addClass('point')
+            } else {
+                $(this).removeClass('point')
+            }
+        })
+        $("button#connect").click(function () {
+            config.target = $(".point");
+            console.log(config.target)
+            drawBetweenObjects.findLines(config.target);
+        })
+        $("button#printPDF").click(function () {
+            let div = document.getElementById('design');
+
+            // Use the html2canvas
+            // function to take a screenshot
+            // and append it
+            // to the output div
+            html2canvas(div).then(
+                function (canvas) {
+                    document
+                        .getElementById('output')
+                        .appendChild(canvas);
+                })
+        })
+    </script>
+</body>
+
+</html>
