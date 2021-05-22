@@ -23,8 +23,8 @@
         }
 
         .point {
-            width: 15px;
-            height: 15px;
+            /* width: 15px;
+            height: 15px; */
             background: #d54501;
             position: absolute;
             z-index: 10;
@@ -142,9 +142,9 @@
             Print Form
         </button>
     </div>
-    <div id="output"></div>
-
-
+    <div style="display: none;">
+        <div id="output"></div>
+    </div>
 
 
 
@@ -206,6 +206,7 @@
         })
         async function printFn() {
             let div = document.getElementById('design');
+            $('#output').empty();
             await html2canvas(div).then(
                 function (canvas) {
                     document
