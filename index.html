@@ -5,148 +5,157 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
-
-    <style>
-        #svg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-        }
-
-        #line {
-            stroke-width: 3px;
-            stroke: black;
-        }
-
-        .point {
-            /* width: 15px;
-            height: 15px; */
-            background: #d54501;
-            position: absolute;
-            z-index: 10;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #4e7c80;
-            color: white;
-            padding: 10px 15px;
-            margin-left: 5px;
-            cursor: pointer;
-            position: relative;
-            z-index: 11;
-            line-height: 1em;
-        }
-
-        .btn:hover {
-            background: #3b5d60;
-        }
-
-        .form-check {
-            padding: 15px 25px;
-            cursor: pointer;
-            position: relative;
-            z-index: 11;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
+    <title>Home</title>
 </head>
 
 <body>
-
-    <!-- each object needs a unique ID although this could be removed for the className check -->
-    <p>Select random numbers and click CONNECT button.</p>
-
-    <div id="design">
-        <table border="1" id="table">
-            <tr>
-                <td>
-                    <div id="ck1" class="form-check">1</div>
-                </td>
-                <td>
-                    <div id="ck2" class="form-check">2</div>
-                </td>
-                <td>
-                    <div id="ck3" class="form-check">3</div>
-                </td>
-                <td>
-                    <div id="ck4" class="form-check">4</div>
-                </td>
-                <td>
-                    <div id="ck5" class="form-check">5</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="ck6" class="form-check">1</div>
-                </td>
-                <td>
-                    <div id="ck7" class="form-check">2</div>
-                </td>
-                <td>
-                    <div id="ck8" class="form-check">3</div>
-                </td>
-                <td>
-                    <div id="ck9" class="form-check">4</div>
-                </td>
-                <td>
-                    <div id="ck10" class="form-check">5</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="ck11" class="form-check">1</div>
-                </td>
-                <td>
-                    <div id="ck12" class="form-check">2</div>
-                </td>
-                <td>
-                    <div id="ck13" class="form-check">3</div>
-                </td>
-                <td>
-                    <div id="ck14" class="form-check">4</div>
-                </td>
-                <td>
-                    <div id="ck15" class="form-check">5</div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="ck16" class="form-check">1</div>
-                </td>
-                <td>
-                    <div id="ck17" class="form-check">2</div>
-                </td>
-                <td>
-                    <div id="ck18" class="form-check">3</div>
-                </td>
-                <td>
-                    <div id="ck19" class="form-check">4</div>
-                </td>
-                <td>
-                    <div id="ck20" class="form-check">5</div>
-                </td>
-            </tr>
-        </table>
+    <div class="container" id="container">
+        <div class="wheel_ten circle_common">
+            <ul class="number_list number_list-10">
+                <li id="l10_p9">9</li>
+                <li id="l10_p8">8</li>
+                <li id="l10_p7">7</li>
+                <li id="l10_p6">6</li>
+                <li id="l10_p5">5</li>
+                <li id="l10_p4">4</li>
+                <li id="l10_p3">3</li>
+                <li id="l10_p2">2</li>
+                <li id="l10_p1">1</li>
+            </ul>
+            <div class="wheel_nine circle_common">
+                <ul class="number_list number_list-9">
+                    <li id="l9_p9">9</li>
+                    <li id="l9_p8">8</li>
+                    <li id="l9_p7">7</li>
+                    <li id="l9_p6">6</li>
+                    <li id="l9_p5">5</li>
+                    <li id="l9_p4">4</li>
+                    <li id="l9_p3">3</li>
+                    <li id="l9_p2">2</li>
+                    <li id="l9_p1">1</li>
+                </ul>
+                <div class="wheel_eight circle_common">
+                    <ul class="number_list number_list-8">
+                        <li id="l8_p9">9</li>
+                        <li id="l8_p8">8</li>
+                        <li id="l8_p7">7</li>
+                        <li id="l8_p6">6</li>
+                        <li id="l8_p5">5</li>
+                        <li id="l8_p4">4</li>
+                        <li id="l8_p3">3</li>
+                        <li id="l8_p2">2</li>
+                        <li id="l8_p1">1</li>
+                    </ul>
+                    <div class="wheel_seven circle_common">
+                        <ul class="number_list number_list-7">
+                            <li id="l7_p9">9</li>
+                            <li id="l7_p8">8</li>
+                            <li id="l7_p7">7</li>
+                            <li id="l7_p6">6</li>
+                            <li id="l7_p5">5</li>
+                            <li id="l7_p4">4</li>
+                            <li id="l7_p3">3</li>
+                            <li id="l7_p2">2</li>
+                            <li id="l7_p1">1</li>
+                        </ul>
+                        <div class="wheel_six circle_common">
+                            <ul class="number_list number_list-6">
+                                <li id="l6_p9">9</li>
+                                <li id="l6_p8">8</li>
+                                <li id="l6_p7">7</li>
+                                <li id="l6_p6">6</li>
+                                <li id="l6_p5">5</li>
+                                <li id="l6_p4">4</li>
+                                <li id="l6_p3">3</li>
+                                <li id="l6_p2">2</li>
+                                <li id="l6_p1">1</li>
+                            </ul>
+                            <div class="wheel_five circle_common">
+                                <ul class="number_list number_list-5">
+                                    <li id="l5_p9">9</li>
+                                    <li id="l5_p8">8</li>
+                                    <li id="l5_p7">7</li>
+                                    <li id="l5_p6">6</li>
+                                    <li id="l5_p5">5</li>
+                                    <li id="l5_p4">4</li>
+                                    <li id="l5_p3">3</li>
+                                    <li id="l5_p2">2</li>
+                                    <li id="l5_p1">1</li>
+                                </ul>
+                                <div class="wheel_four circle_common">
+                                    <ul class="number_list number_list-4">
+                                        <li id="l4_p9">9</li>
+                                        <li id="l4_p8">8</li>
+                                        <li id="l4_p7">7</li>
+                                        <li id="l4_p6">6</li>
+                                        <li id="l4_p5">5</li>
+                                        <li id="l4_p4">4</li>
+                                        <li id="l4_p3">3</li>
+                                        <li id="l4_p2">2</li>
+                                        <li id="l4_p1">1</li>
+                                    </ul>
+                                    <div class="wheel_three circle_common">
+                                        <ul class="number_list number_list-3">
+                                            <li id="l3_p9">9</li>
+                                            <li id="l3_p8">8</li>
+                                            <li id="l3_p7">7</li>
+                                            <li id="l3_p6">6</li>
+                                            <li id="l3_p5">5</li>
+                                            <li id="l3_p4">4</li>
+                                            <li id="l3_p3">3</li>
+                                            <li id="l3_p2">2</li>
+                                            <li id="l3_p1">1</li>
+                                        </ul>
+                                        <div class="wheel_two circle_common">
+                                            <ul class="number_list number_list-2">
+                                                <li id="l2_p9">9</li>
+                                                <li id="l2_p8">8</li>
+                                                <li id="l2_p7">7</li>
+                                                <li id="l2_p6">6</li>
+                                                <li id="l2_p5">5</li>
+                                                <li id="l2_p4">4</li>
+                                                <li id="l2_p3">3</li>
+                                                <li id="l2_p2">2</li>
+                                                <li id="l2_p1">1</li>
+                                            </ul>
+                                            <div class="wheel_one circle_common">
+                                                <ul class="number_list number_list-1">
+                                                    <li id="l1_p9">9</li>
+                                                    <li id="l1_p8">8</li>
+                                                    <li id="l1_p7">7</li>
+                                                    <li id="l1_p6">6</li>
+                                                    <li id="l1_p5">5</li>
+                                                    <li id="l1_p4">4</li>
+                                                    <li id="l1_p3">3</li>
+                                                    <li id="l1_p2">2</li>
+                                                    <li id="l1_p1">1</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <svg id="svg">
             <line id="line" class="line original" stroke-array="5, 5" />
         </svg>
+
     </div>
 
-    <div id="ck6" class="text-center">
+    <div style="display: block;">
         <button type="button" id="connect" class="btn btn-secondary">CONNECT</button>
-        <button type="button" id="printPDF" class="btn">
-            Print Form
-        </button>
+        <button type="button" id="printPDF" class="btn">PRINT</button>
     </div>
+
     <div style="display: none;">
         <div id="output"></div>
     </div>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -155,6 +164,14 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 
     <script>
+        $("ul.number_list > li").click(function () {
+            if (!$(this).hasClass('active_point')) {
+                $(this).addClass('active_point')
+            } else {
+                $(this).removeClass('active_point')
+            }
+        })
+
         const config = {
             target: undefined,
             line: $(".line"),
@@ -189,15 +206,8 @@
             }
         }
 
-        $(".form-check").click(function () {
-            if (!$(this).hasClass('point')) {
-                $(this).addClass('point')
-            } else {
-                $(this).removeClass('point')
-            }
-        })
         $("button#connect").click(function () {
-            config.target = $(".point");
+            config.target = $(".active_point");
             console.log(config.target)
             drawBetweenObjects.findLines(config.target);
         })
@@ -205,7 +215,7 @@
             printFn();
         })
         async function printFn() {
-            let div = document.getElementById('design');
+            let div = document.getElementById('container');
             $('#output').empty();
             await html2canvas(div).then(
                 function (canvas) {
