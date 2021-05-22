@@ -25,11 +25,11 @@ body{
     align-items: center;
 }
 
-.container{
+/* .container{
     position: relative;
     width: 1000px;
-    height: 1050px;
-}
+    height: 1000px;
+} */
 
 .circle_common {
     /* position: absolute; */
