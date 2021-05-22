@@ -1,3 +1,10 @@
+:root{
+    --colorGreen: #008080;
+    --colorWhite: #ffffff;
+    --colorBlack: #000000;
+    --colorGray: #e6e6e6;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
@@ -39,9 +46,9 @@
     /* position: absolute; */
     /* left: 50%; */
     /* top: 50%; */
-    border: #fff 5px solid;
+    border: var(--colorWhite) 5px solid;
     border-radius: 50%;
-    background-color: #e6e6e6;
+    background-color: var(--colorGray);
     /* transform: translate(-50%, -50%); */
     position: relative;
     display: flex;
@@ -52,7 +59,7 @@
 .wheel_ten{
     width: 600px;
     height: 600px;
-    border: #008080 5px solid !important;
+    border: var(--colorGreen) 5px solid !important;
     /* margin: 110px 0 110px; */
 }
 
@@ -130,7 +137,7 @@ ul.number_list > li {
 }
 
 ul.number_list > li.active_point {
-    background-color: #000;
+    background-color: var(--colorBlack);
     /* color: #fff; */
 }
 
@@ -202,14 +209,14 @@ span.wheel_big_zero {
     transform: translate(-50%, -50%); */
     font-weight: 800;
     font-size: 20px;
-    color: #008080;
+    color: var(--colorGreen);
 }
 
 li.number_list-text {
-    color: #008080;
+    color: var(--colorGreen);
     font-weight: 600;
     font-size: 16px !important;
-    width: 80px !important;
+    width: 100px !important;
     text-align: center;
     line-height: 1;
 }
@@ -222,7 +229,7 @@ li.number_list-text {
     font-size: 20px !important;
     font-weight: 800;
     width: 24px;
-    color: #008080;
+    color: var(--colorGreen);
     display: inline-block;
 }
 .number_list-10 li.point-10 span {
@@ -303,11 +310,15 @@ li.number_list-text {
     }
 }
 
-.position-absolute {
-    position: absolute !important;
+.mt-2 {
+    margin-top: 2rem;
 }
 
-.btn {
+.text-center {
+    text-align: center !important;
+}
+
+/* .btn {
     display: inline-block;
     background: #4e7c80;
     color: white;
@@ -317,6 +328,27 @@ li.number_list-text {
     position: relative;
     z-index: 11;
     line-height: 1em;
+} */
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    color: var(--colorWhite);
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: var(--colorGreen);
+    border: 1px solid transparent;
+    padding: .75rem 1.25rem;
+    font-size: .875rem;
+    line-height: 1.6;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
 }
 
 #container > .wrapper {
